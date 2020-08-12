@@ -109,7 +109,7 @@ Your function should accept:
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
 function copy(arr) {
-  let newArr = [...originalFlavors];
+  let newArr = [...arr];
   return newArr;
 }
 
@@ -240,6 +240,13 @@ Your function should accept 4 different arrays,
 and should return a new array called randomFlavors with a length 31.
 forExample, getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].*/
 
-function getRandomFlavors(a1, a2, a3, a4) {
+function getRandomFlavors(arr) {
   let randomFlavorArray = [];
+  // let ranNum = Math.round(Math.random() * arr.length);
+  // console.log(ranNum);
+  for (let i = 0; i < arr.length; i++) {
+    randomFlavorArray.push(arr[i]);
+    return randomFlavorArray;
+  }
 }
+getRandomFlavors(originalFlavors);
