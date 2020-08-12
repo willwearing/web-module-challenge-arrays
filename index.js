@@ -240,13 +240,22 @@ Your function should accept 4 different arrays,
 and should return a new array called randomFlavors with a length 31.
 forExample, getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].*/
 
-function getRandomFlavors(arr) {
+function getRandomFlavors(oF, nF, sF, rF) {
   let randomFlavorArray = [];
-  // let ranNum = Math.round(Math.random() * arr.length);
-  // console.log(ranNum);
-  for (let i = 0; i < arr.length; i++) {
-    randomFlavorArray.push(arr[i]);
-    return randomFlavorArray;
+  let arr = oF.concat(nF, sF, rF);
+
+  while (randomFlavorArray.length <= 31) {
+    let index = Math.floor(Math.random() * arr.length);
+    randomFlavorArray.push(arr[index]);
   }
+  return randomFlavorArray;
 }
-getRandomFlavors(originalFlavors);
+
+console.log(
+  getRandomFlavors(
+    originalFlavors,
+    newFlavors,
+    seasonalFlavors,
+    regionalFlavors
+  )
+);
